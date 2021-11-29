@@ -1,0 +1,40 @@
+Current App Name
+https://cryptic-falls-75514.herokuapp.com/ | https://git.heroku.com/cryptic-falls-75514.git
+
+Initialized empty Git repository in .git/
+git init
+git add .
+git commit -m "My last commit"
+
+For a new Heroku app
+heroku create
+
+For an existing Heroku app, add a remote to the local git
+heroku git:remote -a cryptic-falls-75514
+
+Deploying code
+git push heroku master
+
+Provisioning Heroku Postgres
+heroku addons:create heroku-postgresql:hobby-dev
+
+check addsons 
+heroku addons
+
+heroku config
+
+push data from localhos test to remote DB
+set PGUSER=postgres 
+set PGPASSWORD=root
+heroku pg:push flicka2 postgresql-polished-48577 --app cryptic-falls-75514
+heroku pg:pull postgresql-polished-48577 flicka2 --app cryptic-falls-75514
+heroku pg:reset --confirm cryptic-falls-75514
+
+acces to perform sql inside remote db
+heroku pg:psql
+
+View current config var values
+heroku config:get port
+
+Set a config var
+heroku config:set PORT=26373
